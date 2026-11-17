@@ -1,0 +1,9 @@
+{
+  "enabled": false,
+  "web": {
+    "apiKey": "",
+    "authDomain": "",
+    "projectId": "",
+    "appId": ""
+  }
+}
