@@ -6,7 +6,9 @@
   <meta name="theme-color" content="#f5f1e8">
   <meta name="description" content="다섯 친구와 놀고 물방울을 모아 식물을 키워 봐. RE:ESG의 무료 마음돌봄 게임.">
   <meta name="color-scheme" content="light">
-  <title>RE:ESG 마음정원 v1.9.0 · 친구를 만나는 마음정원</title>
+  <link rel="alternate" hreflang="ko" href="index.html"><link rel="alternate" hreflang="en" href="en.html">
+<script>try{if(localStorage.getItem('reesg-lang')==='en'&&!/[?&]lang=ko(&|$)/.test(location.search))location.replace('en.html'+location.hash);}catch(e){}</script>
+  <title>RE:ESG 마음정원 v1.9.1 · 친구를 만나는 마음정원</title>
   
   
   
@@ -566,6 +568,20 @@ html:not([data-read-scale="1"]) .sound-dock{max-width:calc(100vw - 24px);height:
   .cloud-plaza .plaza-toolbar>.tab-bar{min-width:0}
 }
 </style>
+
+<style id="reesg-lang-switch">
+.site-header{flex-wrap:wrap;row-gap:.25rem}
+.edition-note{flex:0 0 100%;margin:0;text-align:right;color:var(--muted);font-size:.8125rem;line-height:1.45;overflow-wrap:anywhere}
+@media(max-width:760px){.edition-note{text-align:start}.header-tools{max-width:100%}.dialog-actions,.backup-buttons,.post-actions{flex-wrap:wrap}html[lang="en"] .dialog-content :is(button,a,p,h3,h4,label,summary){min-width:0;white-space:normal;overflow-wrap:anywhere;word-break:normal}html[lang="en"] .dialog-content :is(.button,.choice-chip){height:auto;max-width:100%}}
+
+.lang-switch{display:flex;align-items:center;gap:2px;padding:3px;min-height:40px;border-radius:24px;border:1px solid #e1e1d3;background:#fcfaf4;flex-shrink:0}
+.lang-switch a{display:flex;align-items:center;min-height:32px;padding:4px 11px;border-radius:20px;text-decoration:none;font-size:0.8125rem;line-height:1;color:var(--muted);white-space:nowrap}
+.lang-switch a:hover{color:var(--ink)}
+.lang-switch a[aria-current="page"]{background:var(--sage);color:var(--green-dark)}
+.lang-switch .lang-short{display:none}
+@media(max-width:480px){.header-tools .resource-label{display:none}}
+@media(max-width:760px){.lang-switch{min-height:33px;padding:2px}.lang-switch a{min-height:27px;padding:3px 8px;font-size:0.75rem}.lang-switch .lang-long{display:none}.lang-switch .lang-short{display:inline}}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#game">정원으로 바로 가기</a>
@@ -575,11 +591,12 @@ html:not([data-read-scale="1"]) .sound-dock{max-width:calc(100vw - 24px);height:
         <span class="brand-symbol" id="brandIcon"></span>
         <span><span class="brand-label">RE:ESG <span class="brand-dot">·</span> AMADO LAB</span><strong>마음정원</strong></span>
       </a>
-      <div class="header-tools">
+      <div class="header-tools"><nav class="lang-switch" aria-describedby="editionNote" aria-label="언어 선택"><a href="index.html" hreflang="ko" lang="ko" data-lang="ko" aria-current="page"><span class="lang-long">한국어</span><span class="lang-short">KO</span></a><a href="en.html" hreflang="en" lang="en" data-lang="en"><span class="lang-long">English</span><span class="lang-short">EN</span></a></nav>
         <div class="resource drop-resource" aria-label="보유 물방울"><span id="dropIcon"></span><b id="dropCount">1</b><span class="resource-label">물방울</span></div>
         <div class="resource leaf-resource" aria-label="보유 마음열매"><span id="leafIcon"></span><b id="leafCount">2</b><span class="resource-label">마음열매</span></div>
 
       </div>
+      <p id="editionNote" class="edition-note">한국어판과 영문판의 정원 기록은 따로 저장돼요.</p>
     </header>
 
     <main id="game">
@@ -629,7 +646,7 @@ html:not([data-read-scale="1"]) .sound-dock{max-width:calc(100vw - 24px);height:
         <button id="moreButton" data-action="home-more"><span><svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg></span><span>더 보기</span></button>
       </nav>
     </main>
-    <footer class="garden-footer"><span>Emotion · Self · Ground <span class="version-label">v1.9.0</span></span><button class="text-button" data-action="growth-intro">처음 오셨나요?</button></footer>
+    <footer class="garden-footer"><span>Emotion · Self · Ground <span class="version-label">v1.9.1</span></span><button class="text-button" data-action="growth-intro">처음 오셨나요?</button></footer>
   </div>
   <dialog id="gameDialog" aria-labelledby="dialogTitle"><div class="dialog-shell"><header class="dialog-header"><div><p class="eyebrow" id="dialogEyebrow"></p><h2 id="dialogTitle"></h2></div><button class="icon-button close-dialog" data-action="close" aria-label="닫기" id="dialogClose"></button></header><div class="dialog-content" id="dialogContent"></div></div></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
@@ -735,7 +752,7 @@ FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
 </script><script>
 window.REESG_OFFLINE=true;
-window.REESG_BUILD="github-pages-1.9.0";
+window.REESG_BUILD="github-pages-1.9.1";
 window.REESG_PLAZA_PROVIDER="firebase";
 window.REESG_PLAZA_SDK="assets/plaza-sdk-d76079666e6f.mjs";
 (() => {
@@ -748,8 +765,63 @@ window.REESG_PLAZA_SDK="assets/plaza-sdk-d76079666e6f.mjs";
  font.textContent = `@font-face{font-family:'Gowun Dodum';font-weight:400;font-display:swap;src:url('${assetURL('game-font-full.woff2')}') format('woff2')}`;
  document.head.append(font);
 })();
-</script><script>"use strict";(()=>{const __reeModules=Object.create(null);
+</script><script>
+document.querySelectorAll('.lang-switch a[data-lang]').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('reesg-lang',a.dataset.lang);}catch(e){}}));
+</script>
+<script>"use strict";(()=>{const __reeModules=Object.create(null);
 // growth-content.mjs
+// Plaza identifiers are unrelated to the printed card codes. The labels are also
+// accepted on reads for posts saved by earlier Korean or English clients.
+__reeModules["plaza-emotions.mjs"] = (() => {
+  const emotions = Object.freeze([
+    ['p01','기쁨','Joy'],       ['p02','평온','Serenity'],
+    ['p03','설렘','Excitement'], ['p04','고마움','Thankful'],
+    ['p05','뿌듯함','Fulfillment'], ['p06','편안함','Ease'],
+    ['p07','불안','Anxiety'],   ['p08','서운함','Hurt'],
+    ['p09','슬픔','Sadness'],   ['p10','외로움','Loneliness'],
+    ['p11','답답함','Stuck'],   ['p12','화남','Angry'],
+    ['p13','피곤함','Tired'],   ['p14','막막함','At a Loss'],
+    ['p15','복잡함','Tangled'], ['p16','잘 모르겠음','Not Sure']
+  ].map(([id,ko,en]) => Object.freeze({id,ko,en})));
+  const byId = new Map(emotions.map(row => [row.id,row]));
+  const legacy = new Map(emotions.flatMap(row => [[row.ko,row.id],[row.en,row.id]]));
+  const storedEmotionId = value => byId.has(value) ? value : legacy.get(value) ?? '';
+  const isPublicEmotionId = value => byId.has(value);
+  const displayEmotion = (id,language) => byId.get(id)?.[language === 'en' ? 'en' : 'ko'] ?? '';
+  return {emotions, storedEmotionId, isPublicEmotionId, displayEmotion};
+})();
+__reeModules["backup-editions.mjs"] = (() => {
+  const format = 'reesg-mind-garden';
+  const supportedLanguage = value => value === 'ko' || value === 'en';
+
+  function backupEnvelope(state, language) {
+    if (!supportedLanguage(language)) throw new Error('backup-edition');
+    return {format, version:state.version, language, exportedAt:new Date().toISOString(), state};
+  }
+
+  function readBackupEnvelope(raw) {
+    const value = JSON.parse(raw);
+    if (!value || value.format !== format || ![1,2,3].includes(value.version) ||
+        value.state?.version !== value.version) throw new Error('backup-invalid');
+    const day = value.state.day;
+    if (typeof day !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(day)) throw new Error('backup-invalid');
+    const date = new Date(day + 'T00:00:00Z');
+    if (!Number.isFinite(date.getTime()) || date.toISOString().slice(0,10) !== day) throw new Error('backup-invalid');
+    if (Object.hasOwn(value, 'language') && !supportedLanguage(value.language)) throw new Error('backup-edition');
+    return value;
+  }
+
+  // Keep the previous garden before using the normal, conflict-aware game writer.
+  function replaceFromBackup(storage, key, expected, garden, writeGarden) {
+    if (storage.getItem(key) !== expected) {
+      throw Object.assign(new Error('garden-conflict'), {code:'garden-conflict'});
+    }
+    if (expected !== null) storage.setItem(key + '-before-import', expected);
+    return writeGarden(storage, garden, {expectedRaw:expected, initialRaw:expected});
+  }
+
+  return {backupEnvelope, readBackupEnvelope, replaceFromBackup};
+})();
 __reeModules["growth-content.mjs"] = (()=>{
 // Original RE stories. Choices are invitations, never diagnoses or reward gates.
 const FIRST_STEPS=[
@@ -2361,7 +2433,7 @@ const {newFriendDiscovery,normalizeFriendDiscovery,hasFriend,reduceFriends,noteF
 const {normalizeCardTraces,reduceCardTraces}=__reeModules["card-trace-rules.mjs"];
 const {reduceQuestions}=__reeModules["question-rules.mjs"];
 const VERSION = 3;
-const APP_VERSION = "1.9.0";
+const APP_VERSION = "1.9.1";
 const QUESTIONS_PER_FRIEND = 8;
 const BASE_QUESTIONS = 2;
 const TAP_TARGET = 5; // v1.7.3: taps per question seed (was 10). Daily maximum stays MAX_BONUS.
@@ -3675,7 +3747,7 @@ __reeModules["firebase-plaza.mjs"] = (() => {
     ['safety', '안전이 걱정되는 내용이에요'],
     ['other', '그 밖의 이유예요']
   ]);
-  const { EMOTIONS } = __reeModules["content.mjs"];
+  const { storedEmotionId, isPublicEmotionId } = __reeModules["plaza-emotions.mjs"];
 
   function isFirebasePlazaBuild() {
     return location.protocol !== 'file:' && window.REESG_OFFLINE === true &&
@@ -3759,7 +3831,7 @@ __reeModules["firebase-plaza.mjs"] = (() => {
       return {
         id: snapshot.id,
         message: typeof data.message === 'string' ? data.message : '',
-        emotion: EMOTIONS.includes(data.emotion) ? data.emotion : ''
+        emotion: storedEmotionId(data.emotion)
       };
     };
 
@@ -3815,7 +3887,7 @@ __reeModules["firebase-plaza.mjs"] = (() => {
       savePost(day, owner, emotion, text, editing) {
         const ref = post(day, requireAccount(owner));
         const message = messageValue(text, POST_LIMIT);
-        if (!EMOTIONS.includes(emotion)) throw plazaError('plaza/emotion-required');
+        if (!isPublicEmotionId(emotion)) throw plazaError('plaza/emotion-required');
         return editing
           ? sdk.updateDoc(ref, { emotion, message, updatedAt: sdk.serverTimestamp() })
           : sdk.setDoc(ref, { dayKey: day, emotion, ...createFields(message) });
@@ -3896,7 +3968,8 @@ __reeModules["firebase-plaza.mjs"] = (() => {
 })();
 // The existing expansion owns the dialog, local practice and image sharing.
 __reeModules["firebase-plaza-ui.mjs"] = (() => {
-  const { EMOTIONS } = __reeModules["content.mjs"];
+  const { emotions, displayEmotion } = __reeModules["plaza-emotions.mjs"];
+  const label = id => displayEmotion(id, "ko");
   const {
     POST_LIMIT, COMMENT_LIMIT, REASONS, loadProvider, seoulDay, errorMessage
   } = __reeModules["firebase-plaza.mjs"];
@@ -3993,7 +4066,7 @@ __reeModules["firebase-plaza-ui.mjs"] = (() => {
         <label class="form-field" for="cloud-plaza-emotion"><span>공개할 감정 · 하루에 한 글</span></label>
         <select class="form-input" id="cloud-plaza-emotion">
           <option value="">가까운 감정 하나 고르기</option>
-          ${EMOTIONS.map(emotion => `<option ${emotion === postDraft.emotion ? 'selected' : ''}>${esc(emotion)}</option>`).join('')}
+          ${emotions.map(({ id }) => `<option value="${id}" ${id === postDraft.emotion ? 'selected' : ''}>${esc(label(id))}</option>`).join('')}
         </select>
         ${messageField('cloud-plaza-message', postDraft.message, POST_LIMIT, '공개할 마음 한 줄')}
         <p class="subtle">이 버튼으로 남긴 글과 감정을 누구나 읽을 수 있어. 개인 감정 기록은 자동 공유되지 않아.</p>
@@ -4027,7 +4100,7 @@ __reeModules["firebase-plaza-ui.mjs"] = (() => {
       return `<article class="plaza-post cloud-post">
         <div class="post-meta"><span class="post-avatar">${icon('leaf')}</span>
           <span>${mine ? '내가 남긴 마음' : '다른 이용자의 마음'}</span>
-          ${post.emotion ? `<span class="emotion-tag">${esc(post.emotion)}</span>` : ''}
+          ${post.emotion ? `<span class="emotion-tag">${esc(label(post.emotion))}</span>` : ''}
         </div>
         <p class="cloud-user-text">${esc(post.message)}</p>
         <div class="post-actions">
@@ -4451,7 +4524,7 @@ __reeModules["firebase-plaza-ui.mjs"] = (() => {
         case 'share': api.share({ source: 'plaza' }); break;
         case 'share-post': {
           const post = selectPost(index);
-          if (post && post.id === account) api.share({ source: 'plaza', message: post.message, emotion: post.emotion });
+          if (post && post.id === account) api.share({ source: 'plaza', message: post.message, emotion: label(post.emotion) });
           break;
         }
         case 'edit-post': {
@@ -6493,7 +6566,10 @@ try { const raw=localStorage.getItem(STORAGE_KEY),loaded=readGarden(raw,dayNow()
 catch {state=newState(dayNow());storageError=true;blockedStorage=true;}
 const hadSavedGarden=!!lastStoredJSON;
 let dialogMode = '', returnFocus = null, toastTimeout, wateringBusy = false, shopTab = 'garden', shopFriend = 'mind', galleryPage = 0, journalLimit = 10;
+const EDITION = 'ko';
+const {backupEnvelope,readBackupEnvelope,replaceFromBackup}=__reeModules["backup-editions.mjs"];
 let selectedFriend = null, selectedQuestion = null, selectedPractice = null, importCandidate = null;
+let pendingBackup = null, expectedImportRaw = null, importRequest = 0;
 let timer = { id:null, context:null, remaining:0, deadline:0, running:false, interval:null };
 let memory = null, audioContext = null;
 let galleryVariant=0;
@@ -6788,34 +6864,94 @@ function openStorybook(){drawStorybook();}
 function drawStorybook(){const item=SCENES[galleryPage],imageId=galleryVariant&&item.altId?item.altId:item.id;showDialog('storybook','친구들의 그림 이야기','SMALL MOMENTS, SHARED STORIES',`<div class="gallery-layout"><div><img class="gallery-image" src="${assetURL('scene-'+imageId+'.png')}" alt="${item.title}">${item.altId?`<div class="gallery-variants">${button('story-variant','첫 번째 그림',galleryVariant===0?'button button-small button-soft':'button button-small',`data-index="0" aria-pressed="${galleryVariant===0}"`)}${button('story-variant','또 다른 그림',galleryVariant===1?'button button-small button-soft':'button button-small',`data-index="1" aria-pressed="${galleryVariant===1}"`)}</div>`:''}</div><div class="gallery-description"><p class="eyebrow">STORY ${String(galleryPage+1).padStart(2,'0')} / ${SCENES.length}</p><h3>${item.title}</h3><p>${item.copy}</p>${button('story-activity',item.button+' '+icon('arrow'),'button button-primary',`data-index="${galleryPage}"`)}<div class="gallery-pages" aria-label="그림 이야기 페이지">${SCENES.map((_,i)=>button('story-page',String(i+1),`gallery-page${galleryPage===i?' on':''}`,`data-index="${i}" aria-label="${i+1}번째 그림 이야기" aria-pressed="${galleryPage===i}"`)).join('')}</div></div></div>`,{wide:true});}
 
 function openSettings(){
+  let hasRestoreCopy=false;
+  try {hasRestoreCopy=localStorage.getItem(STORAGE_KEY+'-before-import')!==null;} catch {}
   const setting=(key,title,description)=>`<div class="settings-row"><div><strong>${title}</strong><small>${description}</small></div><button class="switch ${state.settings[key]?'on':''}" data-action="setting" data-key="${key}" role="switch" aria-checked="${state.settings[key]}" aria-label="${title}" data-focus="setting-${key}"><span></span></button></div>`;
-  showDialog('settings','나의 정원, 나의 속도','GARDEN SETTINGS',setting('sound','작은 효과음','물 주기와 새로운 만남에 부드러운 소리를 더해요.')+`<div class="settings-row"><div><strong>정원의 소리</strong><small>숲·물·비·밤의 배경 소리. 기본은 꺼져 있고 재생을 눌러야 들려요.</small></div><button class="button button-small" data-action="sound-open">열기</button></div><div class="settings-row"><div><strong>라이선스 안내</strong><small>사용한 자연음의 저작자와 이용 조건</small></div><button class="button button-small" data-action="sound-licenses">보기</button></div>`+`<section class="readability-settings" aria-labelledby="readScaleTitle"><h3 id="readScaleTitle" class="small-heading">읽기 편한 글자 크기</h3><p class="subtle">글자 크기를 골라 줘. 이 기기에 저장되고, 언제든 기본 크기로 돌아올 수 있어.</p><div class="read-scale-options" role="group" aria-label="글자 크기 선택">${[[1,'기본'],[1.3,'크게 · 130%'],[1.5,'더 크게 · 150%'],[2,'아주 크게 · 200%']].map(([value,label])=>`<button class="choice-chip ${(state.settings.readScale||1)===value?'selected':''}" data-action="text-scale" data-value="${value}" aria-pressed="${(state.settings.readScale||1)===value}">${label}</button>`).join('')}</div><p class="subtle read-scale-preview">오늘의 속도로, 천천히 정원을 가꿔요.</p></section>`+setting('reducedMotion','움직임 줄이기','캐릭터와 반딧불의 움직임을 잠시 쉬게 해요.')+setting('night','밤의 정원','조용한 밤빛으로 정원을 바꿔요.')+`<h3 class="small-heading">내 속도로 만나는 여정 안내</h3><p class="subtle">자동 안내: ${state.care.experience?.suppressed?'꺼짐':'켜짐'} · 더 보기에서 활동 3·7·14일에 맞는 자료를 제안해. 꺼도 질문·성장·기록·보상은 그대로 열려 있어.</p><div class="backup-buttons"><button class="button button-small" data-action="pathways-center">여정 안내 보기</button><button class="button button-small" data-action="pathways-suppress">활동일 제안 숨기기</button><button class="button button-small" data-action="pathways-enable">활동일 제안 다시 보기</button></div><h3 class="small-heading">안내와 회고</h3><div class="backup-buttons"><button class="button button-small" data-action="growth-intro">처음 안내 다시 보기</button><button class="button button-small" data-action="growth-journey">내 속도의 정원 여정</button><button class="button button-small" data-action="growth-review">나의 기록과 회고</button><button class="button button-small" data-action="growth-feedback">선택적인 이용 메모</button></div><h3 class="small-heading">기록을 안전하게 가지고 있기</h3><p class="dialog-copy">진행 상황과 마음 기록은 이 브라우저에 저장돼요.${isFirebasePlazaBuild()?' Google 로그인은 공개 마음광장 쓰기에만 쓰여요.':''} 기기를 바꿀 때는 JSON 백업을 내려받아 새 브라우저에서 불러와요.</p><div class="backup-buttons">${button('export',icon('download')+'백업 내려받기','button button-soft')}${button('import',icon('upload')+'백업 불러오기','button')}</div><details class="care-count-notes"><summary>이전 v1.5로 옮길 때</summary><p>호환 백업에는 기존 정원·마음 일지만 담고 v1.6 친구 놀이와 날짜별 대화 기록은 담지 않아요. 전체 기록은 일반 백업으로 간직해 주세요.</p>${button('export-legacy','v1.5용 호환 백업','button button-small')}</details><div class="backup-buttons">${button('export-original','보완 전 기록 사본 내려받기','button button-small')}</div><p class="subtle">보완 전 사본은 처음 보완판을 저장하기 전의 기록을 별도로 보관해. 현재 기록을 지워도 이 사본과 이미 내려받은 백업은 자동으로 지워지지 않아.</p><input type="file" id="backupInput" accept="application/json,.json" hidden><div class="settings-row" style="margin-top:20px"><div><strong>새로운 정원으로 시작하기</strong><small>현재 브라우저의 기록과 진행을 비워요.</small></div>${button('reset-confirm','처음부터','button button-small button-danger')}</div><p class="subtle" style="margin-bottom:0">RE:ESG 마음정원 v${APP_VERSION} · 아마도랩<br>마음을 알아차리고 생활 속 작은 실천을 이어 가는 놀이예요.</p>`,{top:dialogMode!=='settings'});
+  showDialog('settings','나의 정원, 나의 속도','GARDEN SETTINGS',setting('sound','작은 효과음','물 주기와 새로운 만남에 부드러운 소리를 더해요.')+`<div class="settings-row"><div><strong>정원의 소리</strong><small>숲·물·비·밤의 배경 소리. 기본은 꺼져 있고 재생을 눌러야 들려요.</small></div><button class="button button-small" data-action="sound-open">열기</button></div><div class="settings-row"><div><strong>라이선스 안내</strong><small>사용한 자연음의 저작자와 이용 조건</small></div><button class="button button-small" data-action="sound-licenses">보기</button></div>`+`<section class="readability-settings" aria-labelledby="readScaleTitle"><h3 id="readScaleTitle" class="small-heading">읽기 편한 글자 크기</h3><p class="subtle">글자 크기를 골라 줘. 이 기기에 저장되고, 언제든 기본 크기로 돌아올 수 있어.</p><div class="read-scale-options" role="group" aria-label="글자 크기 선택">${[[1,'기본'],[1.3,'크게 · 130%'],[1.5,'더 크게 · 150%'],[2,'아주 크게 · 200%']].map(([value,label])=>`<button class="choice-chip ${(state.settings.readScale||1)===value?'selected':''}" data-action="text-scale" data-value="${value}" aria-pressed="${(state.settings.readScale||1)===value}">${label}</button>`).join('')}</div><p class="subtle read-scale-preview">오늘의 속도로, 천천히 정원을 가꿔요.</p></section>`+setting('reducedMotion','움직임 줄이기','캐릭터와 반딧불의 움직임을 잠시 쉬게 해요.')+setting('night','밤의 정원','조용한 밤빛으로 정원을 바꿔요.')+`<h3 class="small-heading">내 속도로 만나는 여정 안내</h3><p class="subtle">자동 안내: ${state.care.experience?.suppressed?'꺼짐':'켜짐'} · 더 보기에서 활동 3·7·14일에 맞는 자료를 제안해. 꺼도 질문·성장·기록·보상은 그대로 열려 있어.</p><div class="backup-buttons"><button class="button button-small" data-action="pathways-center">여정 안내 보기</button><button class="button button-small" data-action="pathways-suppress">활동일 제안 숨기기</button><button class="button button-small" data-action="pathways-enable">활동일 제안 다시 보기</button></div><h3 class="small-heading">안내와 회고</h3><div class="backup-buttons"><button class="button button-small" data-action="growth-intro">처음 안내 다시 보기</button><button class="button button-small" data-action="growth-journey">내 속도의 정원 여정</button><button class="button button-small" data-action="growth-review">나의 기록과 회고</button><button class="button button-small" data-action="growth-feedback">선택적인 이용 메모</button></div><h3 class="small-heading">기록을 안전하게 가지고 있기</h3><p class="dialog-copy">진행 상황과 마음 기록은 이 브라우저에 저장돼요.${isFirebasePlazaBuild()?' Google 로그인은 공개 마음광장 쓰기에만 쓰여요.':''} 기기를 바꿀 때는 JSON 백업을 내려받아 새 브라우저에서 불러와요.</p><div class="backup-buttons">${button('export',icon('download')+'백업 내려받기','button button-soft')}${button('import',icon('upload')+'백업 불러오기','button')}</div><details class="care-count-notes"><summary>이전 v1.5로 옮길 때</summary><p>호환 백업에는 기존 정원·마음 일지만 담고 v1.6 친구 놀이와 날짜별 대화 기록은 담지 않아요. 전체 기록은 일반 백업으로 간직해 주세요.</p>${button('export-legacy','v1.5용 호환 백업','button button-small')}</details><div class="backup-buttons">${button('export-original','보완 전 기록 사본 내려받기','button button-small')}${hasRestoreCopy?button('backup-previous',backupCopy.previous,'button button-small'):''}</div><p class="subtle">보완 전 사본은 처음 보완판을 저장하기 전의 기록을 별도로 보관해. 현재 기록을 지워도 이 사본과 이미 내려받은 백업은 자동으로 지워지지 않아.</p><input type="file" id="backupInput" accept="application/json,.json" hidden><div class="settings-row" style="margin-top:20px"><div><strong>새로운 정원으로 시작하기</strong><small>현재 브라우저의 기록과 진행을 비워요.</small></div>${button('reset-confirm','처음부터','button button-small button-danger')}</div><p class="subtle" style="margin-bottom:0">RE:ESG 마음정원 v${APP_VERSION} · 아마도랩<br>마음을 알아차리고 생활 속 작은 실천을 이어 가는 놀이예요.</p>`,{top:dialogMode!=='settings'});
 }
 function exportOriginalSnapshot(){
  let raw=initialRaw;try{raw=raw||localStorage.getItem(REFINED_SNAPSHOT_KEY);}catch{}
  if(!raw){toast('아직 별도로 보관한 이전 기록이 없어.');return;}
  let payload=raw,name='REESG_Original_Record_Raw.txt',mime='text/plain';
- try{const prior=JSON.parse(raw);if([1,2,3].includes(prior.version)){payload=JSON.stringify({format:'reesg-mind-garden',version:prior.version,exportedAt:new Date().toISOString(),state:prior},null,2);name='REESG_Before_Refinement.json';mime='application/json';}}catch{}
+ try{const prior=JSON.parse(raw);if([1,2,3].includes(prior.version)){payload=JSON.stringify(backupEnvelope(prior,EDITION),null,2);name='REESG_Before_Refinement_'+EDITION+'.json';mime='application/json';}}catch{}
  const url=URL.createObjectURL(new Blob([payload],{type:mime})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);
 }
-function exportBackup(legacy=false){if(blockedStorage){exportOriginalSnapshot();return;}const copy=structuredClone(state);if(legacy){copy.version=2;delete copy.care;}const payload={format:'reesg-mind-garden',version:legacy?2:VERSION,exportedAt:new Date().toISOString(),state:copy};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`REESG_MindGarden_${dayNow()}${legacy?'_v15-compatible':''}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);toast('마음정원 백업 파일을 내려받았어.');}
-async function readImport(file){
-  if(!file)return;
-  try{if(file.size>2*1024*1024)throw new Error('2MB 이하의 마음정원 백업 파일을 골라 주세요.');const parsed=JSON.parse(await file.text());if(parsed.format!=='reesg-mind-garden'||![1,2,VERSION].includes(parsed.version))throw new Error('마음정원에서 만든 지원되는 버전의 백업 파일을 골라 주세요.');importCandidate=normalizeState(parsed.state,dayNow());
+function exportBackup(legacy=false){if(blockedStorage){exportOriginalSnapshot();return;}const copy=structuredClone(state);if(legacy){copy.version=2;delete copy.care;}const payload=backupEnvelope(copy,EDITION);const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`REESG_MindGarden_${EDITION}_${dayNow()}${legacy?'_v15-compatible':''}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);toast('마음정원 백업 파일을 내려받았어.');}
+const backupCopy = {
+  "invalid": "지원되는 마음정원 JSON 백업인지 확인해 주세요.",
+  "size": "2MB 이하의 백업 파일을 골라 주세요.",
+  "old": "이 백업을 어느 언어판에서 만들었나요?",
+  "oldBody": "이전 백업에는 언어 정보가 없어요. 백업을 만든 언어를 고른 뒤 내용을 확인해 주세요.",
+  "mismatch": "백업을 만든 언어판에서 복원하기",
+  "other": "이 파일은 다른 언어판의 정원 기록이에요. 해당 언어판에서 같은 파일을 다시 골라 주세요. 지금 열린 정원의 기록은 그대로 보관돼요.",
+  "link": "English 정원으로 이동",
+  "ko": "한국어판",
+  "en": "English edition",
+  "failed": "복원할 수 없어요. 저장 공간과 다른 탭의 변경 사항을 확인한 뒤 백업을 다시 골라 주세요.",
+  "ok": "백업 속 정원을 불러왔어.",
+  "previous": "복원 직전 정원 내려받기",
+  "missing": "아직 복원 직전 사본이 없어요."
+};
+function prepareImport(language) {
+  if(!pendingBackup || !['ko','en'].includes(language)) return;
+  importCandidate=null;
+  if(language!==EDITION) {
+    pendingBackup=null;
+    const target=language==='ko'?'index.html?lang=ko':'en.html?lang=en';
+    showDialog('import-edition',backupCopy.mismatch,'',`<p class="dialog-copy">${backupCopy.other}</p><a class="button button-primary" href="${target}">${backupCopy.link}</a>`);
+    return;
+  }
+  try {
+    expectedImportRaw=localStorage.getItem(STORAGE_KEY);
+    importCandidate=normalizeState(pendingBackup.state,dayNow());
+    pendingBackup=null;
     showDialog('import-confirm','이 기록으로 정원을 이어 갈까요?','RESTORE YOUR GARDEN',`<p class="dialog-copy">불러온 백업에 이야기 ${importCandidate.sessions.length}개, 함께 키운 식물 ${importCandidate.trees}개,<br>간직한 친구 놀이 ${importCandidate.care.records.length}개, 날짜별 대화 ${importCandidate.care.talks.length}개, 오늘의 질문 기록 ${importCandidate.care.questions?.entries?.length||0}개가 있어.<br>만난 친구 ${discoveredIds(importCandidate).length}명과 카드 흔적 ${importCandidate.care.cardTraces?.records.length||0}개도 함께 읽었어.<br>현재 브라우저의 진행을 이 백업으로 바꾸게 돼.</p><div class="inline-notice warm">${icon('book')}지금의 기록도 필요하다면 먼저 백업을 내려받아 줘.</div><div class="dialog-actions">${button('export',icon('download')+'지금 기록 백업','button')}${button('confirm-import','이 백업으로 이어가기','button button-primary')}</div>`);
-  }catch(e){toast(e instanceof SyntaxError?'백업 파일을 읽지 못했어. 마음정원에서 내려받은 JSON 파일인지 확인해 줘.':e.message);}
+  } catch { pendingBackup=null;importCandidate=null;toast(backupCopy.invalid); }
+}
+async function readImport(file) {
+  if(!file) return;
+  const request=++importRequest;
+  pendingBackup=null;importCandidate=null;
+  if(file.size>2*1024*1024){toast(backupCopy.size);return;}
+  try {
+    const envelope=readBackupEnvelope(await file.text());
+    if(request!==importRequest || dialogMode!=='settings') return;
+    pendingBackup=envelope;
+    if(envelope.language){prepareImport(envelope.language);return;}
+    showDialog('import-legacy-language',backupCopy.old,'',`<p class="dialog-copy">${backupCopy.oldBody}</p><div class="dialog-actions">${button('backup-language',backupCopy.ko,'button','data-value="ko"')}${button('backup-language',backupCopy.en,'button','data-value="en"')}</div>`);
+  } catch { if(request===importRequest)toast(backupCopy.invalid); }
+}
+function commitImport() {
+  if(!importCandidate || dialogMode!=='import-confirm')return;
+  try {
+    const next=importCandidate;
+    const stored=replaceFromBackup(localStorage,STORAGE_KEY,expectedImportRaw,next,writeGarden);
+    lastStoredJSON=stored;state=next;initialRaw=null;preMigrationRaw=null;blockedStorage=false;storageError=false;memory=null;
+    $('#saveWarning').hidden=true;
+    importCandidate=null;renderMain();closeDialog();toast(backupCopy.ok);
+  } catch { importCandidate=null;openSettings();toast(backupCopy.failed); }
+}
+function exportBeforeImport() {
+  try {
+    const raw=localStorage.getItem(STORAGE_KEY+'-before-import');
+    if(raw===null){toast(backupCopy.missing);return;}
+    let body=raw,extension='txt';
+    try {const saved=JSON.parse(raw);if([1,2,3].includes(saved?.version)){body=JSON.stringify(backupEnvelope(saved,EDITION),null,2);extension='json';}}catch{}
+    const a=document.createElement('a'),url=URL.createObjectURL(new Blob([body],{type:extension==='json'?'application/json':'text/plain'}));
+    a.href=url;a.download='REESG_Before_Restore_'+EDITION+'.'+extension;a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);
+  } catch { toast(backupCopy.failed); }
 }
 function openHelp(){showDialog('help','어서 와, 마음정원에','WELCOME TO YOUR LITTLE GARDEN',`<p class="dialog-copy">다섯 친구와 지금의 마음을 만나고,<br>생활 속 작은 돌봄으로 나만의 정원을 가꾸는 곳이야.</p><div class="help-grid"><div class="help-card">${icon('heart')}<h3>1. 마음 만나기</h3><p>감정을 고르고, 그 뒤의 생각과 바람을 살펴봐. 말하고 싶지 않으면 넘어가도 좋아.</p></div><div class="help-card">${icon('drop')}<h3>2. 작은 돌봄 해 보기</h3><p>친구와 이야기하거나 작은 실천을 해 보면 물방울이 모여. 첫 마음 한 바퀴에도 보상이 있어.</p></div><div class="help-card">${icon('garden')}<h3>3. 나만의 정원 키우기</h3><p>물방울 하나로 한 번 물을 줄 수 있어. 마음열매를 모아 소품과 친구 장식, 새로운 풍경도 골라 봐.</p></div></div><ul class="help-rules"><li>‘오늘’에서 날마다 새로운 마음 질문을 만나. 읽기만 해도, 지나가도 괜찮아. 남기고 싶을 때만 내 기록에 간직해.</li><li>정원의 소리는 직접 재생을 눌러야 들려. 음량·끝나는 시간을 고르고, 언제든 모든 소리를 끌 수 있어.</li><li>다섯 친구 놀이에서 마음 날씨·다시 듣기·쉼·연결 지도·생각 매듭을 만나 봐. 정원의 친구를 두 번 빠르게 누르거나 친구 놀이 버튼으로 열 수 있어.</li><li>기록 모아 보기에서 7일·30일의 실제 기록을 살펴봐. 친구 놀이 결과는 직접 간직한 것만 더해.</li><li>돌봄 산책을 고르고 해 본 만큼 남겨 봐. 관찰 놀이와 친구 편지, 나의 돌봄 나침반도 만날 수 있어.</li><li>정원 카드는 내가 쓴 한 문장만 담아 미리 본 뒤 PNG로 저장하거나 공유해.</li><li>친구를 다섯 번 누르면 추가 질문 하나가 열려. 하루 네 개까지, 빨리 누르든 천천히 누르든 똑같이 모여.</li><li>‘더 보기’의 다른 놀이와 정원 도구에서 소품 배치를 열고 끌어 옮겨. 친구 장식은 머리·얼굴·목·손에 하나씩 달 수 있어.</li><li>광장에 직접 적어 남긴 한 줄만 다른 방문자와 공유해. 마음 기록은 나만의 기록으로 남겨 둬.</li><li>어떤 감정을 골라도 보상은 같아. 마음에 정답은 없어.</li><li>오늘은 쉬어 가도 괜찮아. 며칠 뒤에 와도 식물은 기다리고 있어.</li><li>오늘의 정원 짝꿍에서 여덟 번 골라 식물을 만나 봐. 기본 3종 다음은 마음열매로 열 수 있어.</li><li>물 주기 15번이면 식물이 다 자라. 씨앗을 모으면 작은 숲에 남아.</li><li>마음 기록과 진행은 이 브라우저에 저장돼. 설정에서 백업을 내려받을 수 있어.</li><li>작은 실천은 직접 해 본 만큼 골라 줘. 약속한 일과 해 본 일은 따로 남겨 둘게.</li></ul><div class="inline-notice">${icon('leaf')}처음 온 너에게 물방울 1개와 마음열매 2개를 준비했어. 작은 꽃 소품부터 만나 봐도 좋아.</div><div class="dialog-actions">${button('close','정원 둘러보기','button')}${button('ritual','지금의 마음 만나기 '+icon('arrow'),'button button-primary')}</div>`,{wide:true});}
 
 document.addEventListener('input',e=>{if(e.target.matches('[data-draft-field]')&&state.draft)setDraft({[e.target.dataset.draftField]:e.target.value});});
-document.addEventListener('change',e=>{if(e.target.matches('#backupInput,#importInput'))readImport(e.target.files?.[0]);});
+document.addEventListener('change',e=>{if(e.target.matches('#backupInput,#importInput')){const file=e.target.files?.[0];e.target.value='';readImport(file);}});
 document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.id==='customEmotion'){e.preventDefault();addEmotion();}});
 function addEmotion(){const input=$('#customEmotion'),value=input?.value.trim().slice(0,24);if(!value)return;if(state.draft.emotions.length>=3&&!state.draft.emotions.includes(value)){toast('지금 가까운 마음을 세 개까지 골라 줘.');return;}setDraft({emotions:[...new Set([...state.draft.emotions,value])]});drawRitual({top:false});}
 document.addEventListener('click',e=>{
   const el=e.target.closest('[data-action]');if(!el||el.disabled)return;
   const a=el.dataset.action,id=el.dataset.id,value=el.dataset.value;
   if(soundscape?.handleAction(a,el))return;
-  if(blockedStorage&&!['close','settings','help','home-more','export','export-original','import','confirm-import','reset-confirm','reset-do','more-toggle'].includes(a)){toast('기존 기록을 확인한 뒤 이어가자.');openSettings();return;}
+  if(blockedStorage&&!['close','settings','help','home-more','export','export-original','import','backup-language','backup-previous','confirm-import','reset-confirm','reset-do','more-toggle'].includes(a)){toast('기존 기록을 확인한 뒤 이어가자.');openSettings();return;}
   if(id&&['friend','friend-tap','tap-select','care-open','growth-friend','shop-friend'].includes(a)&&!hasFriend(state,id)){
     discovery.book();return;
   }
@@ -6870,7 +7006,9 @@ document.addEventListener('click',e=>{
     case 'export-legacy':exportBackup(true);break;
     case 'export-original':exportOriginalSnapshot();break;
     case 'import':($('#backupInput')||$('#importInput')).click();break;
-    case 'confirm-import':if(importCandidate){blockedStorage=false;state=importCandidate;importCandidate=null;memory=null;persist();renderMain();closeDialog();toast('백업 속 정원을 불러왔어.');}break;
+    case 'backup-language':if(dialogMode==='import-legacy-language')prepareImport(value);break;
+    case 'backup-previous':exportBeforeImport();break;
+    case 'confirm-import':commitImport();break;
     case 'reset-confirm':showDialog('reset-confirm','새로운 정원으로 시작할까요?','START A NEW LITTLE GARDEN',`<p class="dialog-copy">현재 브라우저의 마음 기록, 소품, 식물의 성장을 모두 비우게 돼.<br>기록을 가지고 있고 싶다면 먼저 백업을 내려받아 줘.</p><div class="dialog-actions">${button('export',icon('download')+'기록 먼저 백업','button')}${button('reset-do','기록을 비우고 새로 시작','button button-danger')}</div>`);break;
     case 'reset-do':blockedStorage=false;state=newState(dayNow());memory=null;persist();renderMain();closeDialog();toast('새로운 씨앗으로 정원을 시작했어.');break;
   }

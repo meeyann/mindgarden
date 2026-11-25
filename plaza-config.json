@@ -1,10 +1,9 @@
 {
-  "enabled": true,
+  "enabled": false,
   "web": {
-    "apiKey": "AIzaSyCNzgmLhHh6zvmnQPXsTeyC4R7mYfbq7wk",
-    "authDomain": "reesg-mindgarden.firebaseapp.com",
-    "projectId": "reesg-mindgarden",
-    "appId": "1:740187097048:web:eda68d40fdf8e7b50854ad"
+    "apiKey": "",
+    "authDomain": "",
+    "projectId": "",
+    "appId": ""
   }
 }
-
